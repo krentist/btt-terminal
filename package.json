@@ -11,8 +11,11 @@
     "build": "npm run build:client && npm run build:server",
     "build:client": "vite build --outDir dist/public",
     "build:server": "esbuild server/index.ts --platform=node --bundle --format=cjs --outfile=dist/index.cjs --define:process.env.NODE_ENV=\"'production'\" --minify --external:better-sqlite3",
-    "start": "NODE_ENV=production node dist/index.cjs",
-},
+    "start": "NODE_ENV=production node dist/index.cjs"
+  },
+  "engines": {
+    "node": ">=20.11"
+  },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
     "@jridgewell/trace-mapping": "^0.3.25",
